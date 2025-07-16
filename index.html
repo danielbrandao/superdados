@@ -1,32 +1,17 @@
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SD - Olá, somos a SuperDados</title>
+    <title>SD - SuperDados</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
         
         .gradient-bg {
             background: linear-gradient(135deg, #6b1a7a 0%, #3d0366 50%, #0f0218 100%);
-        }
-        
-        .logo-glow {
-            filter: drop-shadow(0 0 20px rgba(144, 37, 175, 0.3));
-        }
-        
-        .pulse-animation {
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: .8;
-            }
         }
         
         .fade-in {
@@ -53,6 +38,9 @@
             0%, 50% { border-color: #9025af; }
             51%, 100% { border-color: transparent; }
         }
+        .logotipo{
+            margin-left: 15%;
+        }
     </style>
 </head>
 <body class="gradient-bg min-h-screen flex items-center justify-center font-['Inter'] overflow-hidden">
@@ -60,94 +48,61 @@
     <div class="absolute inset-0 overflow-hidden">
         <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl"></div>
         <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-300 opacity-10 rounded-full blur-3xl"></div>
-
     </div>
 
     <!-- Main content -->
     <div class="relative z-10 text-center px-6 max-w-4xl mx-auto fade-in">
-        <!-- Logo -->
-        <div class="mb-12 logo-glow">
-            <!-- SD Icon -->
-            <!--div class="inline-block mb-6">
-                <svg width="120" height="120" viewBox="0 0 120 120" class="mx-auto">
-                    <defs>
-                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#9025af;stop-opacity:1" />
-                            <stop offset="50%" style="stop-color:#5a049d;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#1d0430;stop-opacity:1" />
-                        </linearGradient>
-                        <filter id="glow">
-                            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                            <feMerge> 
-                                <feMergeNode in="coloredBlur"/>
-                                <feMergeNode in="SourceGraphic"/>
-                            </feMerge>
-                        </filter>
-                    </defs>
-                    
-                    <circle cx="60" cy="60" r="58" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
-                    
-                    <circle cx="60" cy="60" r="50" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
-                    
-                    <text x="60" y="75" text-anchor="middle" fill="white" font-size="36" font-weight="800" font-family="Inter" filter="url(#glow)">SD</text>
-                    
-                </svg>
-                  
-                </template>
-            </div-->
-            <div>
-                <image src="logo.png" width="75%" class="mx-auto">
-
+        <!-- Logo Space -->
+        <div class="mb-16">
+            <!-- Reserved space for your logo - you can place your logo here -->
+            <div class="h-32 flex items-center justify-center">
+                <div class="text-white text-opacity-30 text-sm border-2 border-dashed border-white border-opacity-20 px-8 py-4 rounded-lg">
+                    <img class="logotipo" src="logo.png" width="75%">
+                </div>
             </div>
-            
-            <!-- Company name -->
-            <!--h1 class="text-5xl md:text-7xl font-800 text-white mb-2 tracking-tight">
-                SUPERDADOS
-            </h1-->
-            <div class="mb-16">
-            <div class="text-xl md:text-2xl text-purple-100 font-300 mb-8 leading-relaxed h-16 max-w-2xl mx-auto flex items-center justify-center">
+        </div>
+
+        <!-- Animated Slogan -->
+        <div class="mb-20">
+            <div class="text-xl md:text-2xl text-purple-100 font-300 leading-relaxed max-w-2xl mx-auto h-16 flex items-center justify-center">
                 <span id="typewriter-text" class="typewriter"></span>
             </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="space-y-8">
+            <p class="text-purple-200 text-lg">
+                Fique por dentro das novidades
+            </p>
             
-            <!-- Coming soon badge -->
-            <!--div class="inline-flex items-center px-6 py-3 bg-white bg-opacity-10 backdrop-blur-sm rounded-full border border-white border-opacity-20">
-                <div class="w-2 h-2 bg-green-400 rounded-full mr-3 pulse-animation"></div>
-                <span class="text-white font-500 text-lg">Em Breve</span>
-            </div-->
-        </div>
-        </div>
-
-        <!-- Slogan -->
-        
-
-        <!-- Additional elements -->
-        <div class="space-y-6">
-            <!-- Progress indicator -->
-            <!--div class="max-w-md mx-auto">
-                <div class="flex justify-between text-purple-200 text-sm mb-2">
-                    <span>Preparando algo incrível</span>
-                    <span>85%</span>
-                </div>
-                <div class="w-full bg-white bg-opacity-10 rounded-full h-2">
-                    <div class="bg-gradient-to-r from-purple-400 to-pink-400 h-2 rounded-full" style="width: 85%"></div>
-                </div>
-            </div-->
-
-            <!-- Contact info -->
-            <div class="pt-8">
-                <p class="text-purple-200 text-sm">
-                    Fique por dentro das novidades
-                </p>
-                <div class="flex justify-center space-x-6 mt-4">
-                    <div class="w-8 h-8 bg-white bg-opacity-10 rounded-full flex items-center justify-center hover:bg-opacity-20 transition-all cursor-pointer">
-                        <span class="text-white text-sm" alt="E-mail de contato" title="E-mail de contato"><a href="mailto: super.dadosbr@gmail.com" target="_blank" alt="E-mail de contato"> 📧</a></span>
+            <!-- Social Media Icons -->
+            <div class="flex justify-center space-x-8">
+                <!-- Email -->
+                <a href="mailto:contato@superdados.com" class="group">
+                    <div class="w-12 h-12 bg-white bg-opacity-10 rounded-full flex items-center justify-center hover:bg-opacity-20 transition-all duration-300 group-hover:scale-110">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
                     </div>
-                    <div class="w-8 h-8 bg-white bg-opacity-10 rounded-full flex items-center justify-center hover:bg-opacity-20 transition-all cursor-pointer">
-                        <span class="text-white text-sm" alt="Nosso Instagram" title="Nosso Instagram"><a href="https://instagram.com/super.dados" target="_blank">📱</a></span>
+                </a>
+                
+                <!-- Instagram -->
+                <a href="https://instagram.com/superdados" target="_blank" class="group">
+                    <div class="w-12 h-12 bg-white bg-opacity-10 rounded-full flex items-center justify-center hover:bg-opacity-20 transition-all duration-300 group-hover:scale-110">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
                     </div>
-                    <div class="w-8 h-8 bg-white bg-opacity-10 rounded-full flex items-center justify-center hover:bg-opacity-20 transition-all cursor-pointer">
-                        <span class="text-white text-sm" alt="Nosso Linkedin" title="Nosso Linkedin"><a href="https://linkedin.com" target="_blank">🌐 </a>
-                </div>
+                </a>
+                
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/company/superdados" target="_blank" class="group">
+                    <div class="w-12 h-12 bg-white bg-opacity-10 rounded-full flex items-center justify-center hover:bg-opacity-20 transition-all duration-300 group-hover:scale-110">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
@@ -163,9 +118,9 @@
     <script>
         const phrases = [
             "Transformando dados em insights poderosos",
+            "Plataforma completa para cursos e mentorias",
             "Inteligência artificial para o seu negócio",
-            "Mentoria de Planejamento de Carreiras",
-            "Plataforma de Gestão de Cursos e Conteúdos",
+            "Análises avançadas que geram resultados",
             "Decisões inteligentes baseadas em dados"
         ];
         
@@ -184,10 +139,10 @@
                 if (currentChar === 0) {
                     isDeleting = false;
                     currentPhrase = (currentPhrase + 1) % phrases.length;
-                    setTimeout(typeWriter, 500); // Pause before typing next phrase
+                    setTimeout(typeWriter, 500);
                     return;
                 }
-                setTimeout(typeWriter, 50); // Deleting speed
+                setTimeout(typeWriter, 50);
             } else {
                 typewriterElement.textContent = current.substring(0, currentChar + 1);
                 currentChar++;
@@ -196,15 +151,14 @@
                     setTimeout(() => {
                         isDeleting = true;
                         typeWriter();
-                    }, 1000); // Pause before deleting
+                    }, 2000);
                     return;
                 }
-                setTimeout(typeWriter, 50); // Typing speed
+                setTimeout(typeWriter, 100);
             }
         }
         
-        // Start the typewriter effect after page loads
         setTimeout(typeWriter, 1000);
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'95fbe4e613036f7f',t:'MTc1MjYxMDEzMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96011e2d36bf2800',t:'MTc1MjY2NDkwNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
