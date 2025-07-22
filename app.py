@@ -8,7 +8,7 @@ from flask_mail import Mail, Message  # NOVO IMPORT
 app = Flask(__name__)
 
 # --- Configuração Inteligente do Banco de Dados ---
-db_uri = os.getenv('DATABASE_URL') or os.getenv('POSTGRES_URL')
+db_uri = os.getenv('DATABASE_URL') # or os.getenv('POSTGRES_URL')
 
 # Se nenhuma variável de produção for encontrada, usa o SQLite local.
 if not db_uri:
@@ -18,7 +18,7 @@ if not db_uri:
 
 # Corrige o prefixo para o PostgreSQL (necessário para o SQLAlchemy)
 elif db_uri.startswith("postgres://"):
-    db_uri = db_uri.replace("postgres://", "postgresql://", 1)
+    db_uri = db_uri.replace("postgres://", "postgresql+psycopg2://", 1)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
