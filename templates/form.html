@@ -46,7 +46,7 @@
 
             <!-- Formulário -->
             <div class="bg-white rounded-2xl shadow-2xl p-8 lg:p-12">
-                <form id="preInscricaoForm" class="space-y-6">
+                <form id="/edu"method="post" class="space-y-6">
                     <!-- Nome -->
                     <div>
                         <label for="nome" class="block text-purple-dark font-montserrat font-semibold text-lg mb-3">
@@ -116,10 +116,8 @@
                         <label for="interesse" class="block text-purple-dark font-montserrat font-semibold text-lg mb-3">
                             Qual seu interesse atual? *
                         </label>
-                        <select 
-                            id="interesse" 
-                            name="interesse" 
-                            required
+                        <!--select
+
                             class="w-full px-4 py-3 border-2 border-purple-light/30 rounded-lg focus:border-purple-light focus:outline-none transition-colors text-gray-700 bg-white"
                         >
                             <option value="">Selecione uma opção</option>
@@ -129,6 +127,14 @@
                             <option value="workshops">Workshops e Eventos</option>
                             <option value="consultoria">Consultoria para Instituição</option>
                             <option value="outros">Outros interesses</option>
+                        </select-->
+                        <select id="interesse"
+                            name="interesse"
+                            required class="form-select">
+                            <option>Aprender a usar IA do zero</option>
+                            <option>Aplicar novas técnicas com IA</option>
+                            <option>Quero me tornar Professor</option>
+                            <option>Obter Novas práticas e metodologias</option>
                         </select>
                     </div>
 

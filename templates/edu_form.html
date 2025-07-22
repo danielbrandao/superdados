@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pré-inscrição e Download E-book</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'purple-dark': '#33005c',
+                        'purple-medium': '#6424ad',
+                        'purple-light': '#A884F3'
+                    },
+                    fontFamily: {
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                        'lato': ['Lato', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-lato bg-gradient-to-br from-purple-medium to-purple-dark min-h-screen flex items-center justify-center py-12">
+    <div class="container mx-auto px-6">
+        <div class="max-w-2xl mx-auto">
+            <div class="text-center mb-12">
+                <h1 class="font-montserrat font-bold text-4xl lg:text-5xl text-white mb-4">
+                    Receba seu E-book Gratuito
+                </h1>
+                <p class="text-xl text-white/90">
+                    Preencha o formulário para garantir sua cópia e nos ajude a te conhecer melhor.
+                </p>
+            </div>
+            <div class="bg-white rounded-2xl shadow-2xl p-8 lg:p-12">
+
+                <form action="/edu" method="POST" class="space-y-6">
+
+                    <div>
+                        <label for="nome" class="block text-purple-dark font-montserrat font-semibold text-lg mb-3">Nome Completo *</label>
+                        <input type="text" id="nome" name="nome" required class="w-full px-4 py-3 border-2 border-purple-light/30 rounded-lg focus:border-purple-light focus:outline-none transition-colors text-gray-700" placeholder="Digite seu nome completo">
+                    </div>
+
+                    <div>
+                        <label for="email" class="block text-purple-dark font-montserrat font-semibold text-lg mb-3">E-mail *</label>
+                        <input type="email" id="email" name="email" required class="w-full px-4 py-3 border-2 border-purple-light/30 rounded-lg focus:border-purple-light focus:outline-none transition-colors text-gray-700" placeholder="seu@email.com">
+                    </div>
+
+                    <div>
+                        <label for="whatsapp" class="block text-purple-dark font-montserrat font-semibold text-lg mb-3">WhatsApp *</label>
+                        <input type="tel" id="whatsapp" name="whatsapp" required class="w-full px-4 py-3 border-2 border-purple-light/30 rounded-lg focus:border-purple-light focus:outline-none transition-colors text-gray-700" placeholder="(11) 99999-9999">
+                    </div>
+
+                    <div>
+                        <label class="block text-purple-dark font-montserrat font-semibold text-lg mb-3">O que achou do nosso conteúdo? *</label>
+                        <div class="flex items-center space-x-2 mb-2">
+                            <div class="flex space-x-1" id="starRating">
+                                <button type="button" class="star text-3xl text-gray-300 hover:text-yellow-400 transition-colors" data-rating="1">★</button>
+                                <button type="button" class="star text-3xl text-gray-300 hover:text-yellow-400 transition-colors" data-rating="2">★</button>
+                                <button type="button" class="star text-3xl text-gray-300 hover:text-yellow-400 transition-colors" data-rating="3">★</button>
+                                <button type="button" class="star text-3xl text-gray-300 hover:text-yellow-400 transition-colors" data-rating="4">★</button>
+                                <button type="button" class="star text-3xl text-gray-300 hover:text-yellow-400 transition-colors" data-rating="5">★</button>
+                            </div>
+                            <span id="ratingText" class="text-purple-dark font-medium ml-4"></span>
+                        </div>
+                        <input type="hidden" id="rating" name="rating" required>
+                        <p class="text-sm text-gray-600">Clique nas estrelas para avaliar</p>
+                    </div>
+
+                    <div>
+                        <label for="interesse" class="block text-purple-dark font-montserrat font-semibold text-lg mb-3">Qual seu interesse atual? *</label>
+                        <select id="interesse" name="interesse" required class="w-full px-4 py-3 border-2 border-purple-light/30 rounded-lg focus:border-purple-light focus:outline-none transition-colors text-gray-700 bg-white">
+                            <option value="">Selecione uma opção</option>
+                            <option value="mentoria">Mentoria Individual IA.EDU</option>
+                            <option value="curso-online">Curso Online IA.EDU</option>
+                            <option value="ambos">Tanto Mentoria quanto Curso Online</option>
+                            <option value="workshops">Workshops e Eventos</option>
+                            <option value="consultoria">Consultoria para Instituição</option>
+                            <option value="outros">Outros interesses</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="mensagem" class="block text-purple-dark font-montserrat font-semibold text-lg mb-3">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" rows="4" class="w-full px-4 py-3 border-2 border-purple-light/30 rounded-lg focus:border-purple-light focus:outline-none transition-colors text-gray-700 resize-vertical" placeholder="Fale mais sobre seus objetivos, dúvidas ou expectativas..."></textarea>
+                    </div>
+
+                    <div class="pt-6">
+                        <button type="submit" class="w-full bg-gradient-to-r from-purple-medium to-purple-dark hover:from-purple-dark hover:to-purple-medium text-white font-montserrat font-bold text-lg px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                            RECEBER E-BOOK E ENVIAR DADOS
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        // ... (o script é exatamente o mesmo de antes) ...
+    </script>
+</body>
+</html>

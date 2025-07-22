@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo ao IA.EDU</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'purple-dark': '#33005c',
+                        'purple-medium': '#6424ad',
+                        'purple-light': '#A884F3'
+                    },
+                    fontFamily: {
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                        'lato': ['Lato', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-lato bg-gradient-to-br from-purple-medium to-purple-dark min-h-screen flex items-center justify-center text-center">
+    <div class="container mx-auto px-6">
+        <div class="max-w-3xl mx-auto">
+            <h1 class="font-montserrat font-bold text-5xl lg:text-7xl text-white mb-6">
+                Transforme a Educação com Inteligência Artificial
+            </h1>
+            <p class="text-xl text-white/90 mb-12">
+                Participe da nossa pré-inscrição, ganhe um e-book exclusivo e seja o primeiro a conhecer nossas ferramentas.
+            </p>
+            <a href="/edu" class="inline-block bg-white text-purple-dark font-montserrat font-bold text-lg px-10 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-2xl">
+                FAZER PRÉ-INSCRIÇÃO
+            </a>
+        </div>
+    </div>
+</body>
+</html>
