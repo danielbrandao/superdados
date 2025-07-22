@@ -8,16 +8,22 @@ from flask_mail import Mail, Message  # NOVO IMPORT
 app = Flask(__name__)
 
 # --- Configuração Inteligente do Banco de Dados ---
-db_uri = os.getenv('POSTGRES_URL')
+db_uri = os.getenv('DATABASE_URL') or os.getenv('POSTGRES_URL')
+
+# Se nenhuma variável de produção for encontrada, usa o SQLite local.
 if not db_uri:
     db_path = os.path.join(os.path.dirname(__file__), 'local.db')
     db_uri = 'sqlite:///{}'.format(db_path)
     print("AVISO: Usando banco de dados SQLite local para desenvolvimento.")
+
+# Corrige o prefixo para o PostgreSQL (necessário para o SQLAlchemy)
 elif db_uri.startswith("postgres://"):
     db_uri = db_uri.replace("postgres://", "postgresql://", 1)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db = SQLAlchemy(app)
 
 # --- NOVA CONFIGURAÇÃO DE E-MAIL ---
 app.config['MAIL_SERVER'] = os.getenv('MAIL_SERVER', 'smtp.gmail.com')
@@ -27,7 +33,6 @@ app.config['MAIL_USERNAME'] = os.getenv('MAIL_USERNAME')  # Seu email do Gmail
 app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASSWORD')  # Sua senha de app de 16 letras
 app.config['MAIL_DEFAULT_SENDER'] = os.getenv('MAIL_USERNAME')
 
-db = SQLAlchemy(app)
 mail = Mail(app)  # Inicializa o Flask-Mail
 
 
@@ -93,7 +98,7 @@ def obrigado():
 # --- NOVA FUNÇÃO PARA ENVIAR E-MAIL ---
 def enviar_email_notificacao(lead):
     # O email será enviado para o mesmo endereço configurado para enviar
-    destinatario = app.config['MAIL_USERNAME']
+    destinatario = app.config['ADMIN_EMAIL']
     if not destinatario:
         print("AVISO: MAIL_USERNAME não configurado. E-mail de notificação não será enviado.")
         return
