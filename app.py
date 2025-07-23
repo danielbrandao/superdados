@@ -47,8 +47,8 @@ class Lead(db.Model):
     mensagem = db.Column(db.Text, nullable=True)
 
 
-with app.app_context():
-    db.create_all()
+# with app.app_context():
+#     db.create_all()
 
 
 # --- ROTAS ---
