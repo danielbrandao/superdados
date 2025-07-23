@@ -8,7 +8,7 @@ from flask_mail import Mail, Message  # NOVO IMPORT
 app = Flask(__name__)
 
 # --- Configuração Inteligente do Banco de Dados ---
-db_uri = os.getenv('DATABASE_URL') # or os.getenv('POSTGRES_URL')
+db_uri = os.getenv('DATABASE_URL') or os.getenv('POSTGRES_URL')
 
 # Se nenhuma variável de produção for encontrada, usa o SQLite local.
 if not db_uri:
