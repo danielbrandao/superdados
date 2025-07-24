@@ -22,25 +22,25 @@ db_uri = os.getenv('DATABASE_URL') or os.getenv('POSTGRES_URL')
 
 # Se nenhuma variável de produção for encontrada, usa o SQLite local.
 if not db_uri:
-    db_path = os.path.join(os.path.dirname(__file__), 'trash/local.db')
+    db_path = os.path.join(os.path.dirname(__file__), 'local.db')
     db_uri = 'sqlite:///{}'.format(db_path)
     print("AVISO: Usando banco de dados SQLite local para desenvolvimento.")
 
 # Corrige o prefixo para o PostgreSQL (necessário para o SQLAlchemy)
-elif db_uri.startswith("postgres://"):
-    db_uri = db_uri.replace("postgres://", "postgresql+psycopg2://", 1)
+# elif db_uri.startswith("postgres://"):
+#     db_uri = db_uri.replace("postgres://", "postgresql+psycopg2://", 1)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # --- NOVA CONFIGURAÇÃO DE E-MAIL ---
 # --- Configuração do Email ---
-MAIL_SERVER = 'smtp.gmail.com'
-MAIL_PORT = 587
-MAIL_USE_TLS = True
-MAIL_USERNAME = 'super.dadosbr@gmail.com'
-MAIL_PASSWORD = 'wcjt grmi vrnq vuno'
-MAIL_DEFAULT_SENDER = MAIL_USERNAME
+# MAIL_SERVER = 'smtp.gmail.com'
+# MAIL_PORT = 587
+# MAIL_USE_TLS = True
+# MAIL_USERNAME = 'super.dadosbr@gmail.com'
+# MAIL_PASSWORD = 'wcjt grmi vrnq vuno'
+# MAIL_DEFAULT_SENDER = MAIL_USERNAME
 
 mail = Mail(app)  # Inicializa o Flask-Mail
 
