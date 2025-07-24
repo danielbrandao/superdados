@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+<head>
+    <title>Upload CSV</title>
+</head>
+<body>
+    <h1>Upload de Inscrições via CSV</h1>
+    <form action="/upload-csv" method="post" enctype="multipart/form-data">
+        Origem/Campanha: <input type="text" name="origem" placeholder="Nome do evento ou campanha"><br><br>
+        Selecione o arquivo CSV: <input type="file" name="file"><br><br>
+        <input type="submit" value="Upload">
+    </form>
+</body>
+</html>

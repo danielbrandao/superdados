@@ -11,6 +11,12 @@
     <div class="container mx-auto px-4 py-8">
         <div class="flex justify-between items-center mb-6">
             <h1 class="text-3xl font-bold font-montserrat text-gray-800">Inscrições Recebidas</h1>
+            <a href="{{ url_for('enviar_brinde') }}" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition-colors">
+                Enviar Brinde
+            </a>
+            <a href="{{ url_for('upload_csv') }}" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition-colors">
+                Upload CSV
+            </a>
             <a href="{{ url_for('export_csv') }}" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition-colors">
                 Baixar CSV
             </a>

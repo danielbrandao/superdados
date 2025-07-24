@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enviar Brinde</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-gray-100 font-lato" x-data="{ open: false, link: '' }">
+
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-2xl font-bold mb-6">Enviar Brinde aos Inscritos</h1>
+
+    <form x-ref="formBrinde" method="POST" action="{{ url_for('confirmar_envio_brinde') }}">
+
+      <!-- Campo do Link do Brinde -->
+      <div class="mb-4">
+        <label for="link_brinde" class="block text-sm font-medium text-gray-700">Link do E-book/Brinde</label>
+        <input type="text" name="link_brinde" id="link_brinde" required x-model="link"
+          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500">
+      </div>
+
+      <!-- Lista de inscritos para seleção -->
+      <div class="mb-6">
+        <h2 class="text-lg font-semibold mb-2">Selecione os inscritos para enviar:</h2>
+        <div class="bg-white shadow rounded">
+          <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="px-4 py-2">
+                  <input type="checkbox" @click="toggleAll($event)">
+                </th>
+                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Nome</th>
+                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Email</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+              {% for lead in leads %}
+              <tr>
+                <td class="px-4 py-2">
+                  <input type="checkbox" name="selected_leads" value="{{ lead.id }}">
+                </td>
+                <td class="px-4 py-2 text-sm text-gray-700">{{ lead.nome }}</td>
+                <td class="px-4 py-2 text-sm text-gray-700">{{ lead.email }}</td>
+              </tr>
+              {% else %}
+              <tr>
+                <td colspan="3" class="px-4 py-2 text-center text-gray-500">Nenhum inscrito encontrado.</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Botões -->
+      <div class="flex justify-between">
+        <button type="button" @click="open = true"
+          class="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
+          Pré-visualizar Email
+        </button>
+
+        <button type="submit"
+          class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+          Enviar Emails
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+  <!-- Modal de Preview -->
+  <div x-show="open" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50" style="display: none;">
+    <div class="bg-white rounded-lg p-8 max-w-xl w-full">
+      <h2 class="text-xl font-bold mb-4">Preview do Email</h2>
+
+      <div class="text-sm text-gray-800">
+        <iframe class="w-full h-96 border rounded" :srcdoc="`
+          <!DOCTYPE html>
+        <html lang="pt-BR">
+        <head>
+          <meta charset="UTF-8">
+          <title>Seu E-book Gratuito</title>
+        </head>
+        <body style="font-family: Arial, sans-serif; background-color: #f4f4f4; margin:0; padding:20px;">
+          <table align="center" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px; background-color:#ffffff; padding:20px; border-radius:8px;">
+            <tr>
+              <td style="text-align: center;">
+                <h2 style="color:#333333;">Olá, {lead.nome}.</h2>
+                <p style="font-size:16px; color:#555555;">
+                  Que alegria ter você no meu workshop sobre <strong>IA na Educação</strong>! Vi o seu interesse e engajamento durante nosso encontro e isso me deixou muito animado(a) para compartilhar algo especial com você.
+                </p>
+                <p style="font-size:16px; color:#555555;">
+                  Como prometido, aqui está seu e-book gratuito: <strong>"30 Prompts para otimizar sua Produtividade na educação"</strong>
+                </p>
+
+                <a href="{link_brinde}" style="display:inline-block; background-color:#10B981; color:#ffffff; text-decoration:none; padding:12px 24px; margin:20px 0; border-radius:4px; font-weight:bold;">
+                  📥 BAIXAR E-BOOK AGORA
+                </a>
+
+                <p style="font-size:16px; color:#555555; text-align:left;">
+                  Este material foi cuidadosamente desenvolvido com base em minha experiência prática implementando a IA de forma efetiva em minha rotina como Professor. Você vai encontrar:
+                </p>
+                <ul style="font-size:16px; color:#555555; text-align:left; padding-left:20px;">
+                  <li>Prompts testados e aprovados para criação de atividades</li>
+                  <li>Templates para avaliações personalizadas</li>
+                  <li>Dicas de produtividade para professores e gestores</li>
+                  <li>Exemplos práticos para diferentes disciplinas</li>
+                </ul>
+
+                <p style="font-size:16px; color:#555555; text-align:left;">
+                  Mas isso é só o começo... Percebo que muitos educadores têm o mesmo desafio que você: sabem que a IA pode revolucionar a educação, mas não sabem exatamente COMO implementar isso na prática do dia a dia. Por isso, criei espaços exclusivos para continuarmos essa jornada juntos:
+                </p>
+
+                <a href="https://chat.whatsapp.com/C0AxdYVbESu4vp3lZyEaqL" style="display:inline-block; background-color:#2563EB; color:#ffffff; text-decoration:none; padding:12px 24px; margin:20px 0; border-radius:4px; font-weight:bold;">
+                  🤝 ENTRE NO NOSSO GRUPO VIP NO WHATSAPP
+                </a>
+
+                <p style="font-size:16px; color:#555555; text-align:left;">
+                  Lá você vai encontrar uma crescente comunidade de educadores apaixonados por IA, onde compartilhamos:
+                </p>
+                <ul style="font-size:16px; color:#555555; text-align:left; padding-left:20px;">
+                  <li>Dicas de prompts</li>
+                  <li>Cases de sucesso reais</li>
+                  <li>Novidades e ferramentas</li>
+                  <li>Acesso ao meu Whatsapp pessoal</li>
+                  <li>Acesso antecipado aos meus novos conteúdos</li>
+                </ul>
+
+                <p style="font-size:16px; color:#555555;">
+                  👉 Siga também nosso Instagram especializado:<br>
+                  <a href="https://www.instagram.com/mentoria_ia_edu" style="color:#10B981; font-weight:bold;">@mentoria_ia_edu</a>
+                </p>
+
+                <p style="font-size:16px; color:#555555; text-align:left;">
+                  No Instagram, você encontrará posts com conteúdos práticos, tutoriais rápidos e bastidores de como uso IA na educação. É o seu feed diário de inspiração e aprendizado!
+                </p>
+
+                <p style="font-size:16px; color:#555555; text-align:left;">
+                  💡 <strong>Dica extra:</strong> Depois de baixar o e-book, teste pelo menos 3 prompts esta semana e compartilhe os resultados no nosso grupo do WhatsApp! Adoro ver os educadores colocando em prática e trocando experiências.
+                </p>
+
+                <p style="font-size:16px; color:#555555; text-align:left;">
+                  <em>P.S.: No grupo do WhatsApp você ainda ganha acesso a materiais bônus exclusivos que não compartilho em nenhum outro lugar!</em>
+                </p>
+
+                <p style="font-size:16px; color:#555555; margin-top:30px;">
+                  Grande abraço e nos vemos na comunidade!<br><br>
+                  <b>Prof. Daniel Brandão | Mentoria IA.edu</b>
+                </p>
+              </td>
+            </tr>
+          </table>
+        </body>
+        </html>
+        `"></iframe>
+      </div>
+
+      <div class="mt-6 flex justify-end space-x-4">
+        <button type="button" @click="open = false"
+          class="bg-gray-500 text-white px-4 py-2 rounded">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleAll(event) {
+      const checkboxes = document.querySelectorAll('input[name="selected_leads"]');
+      checkboxes.forEach(cb => cb.checked = event.target.checked);
+    }
+  </script>
+
+</body>
+</html>

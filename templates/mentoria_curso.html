@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA.EDU - Transforme suas Aulas com IA e Metodologias Ativas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'purple-dark': '#33005c',
+                        'purple-medium': '#6424ad',
+                        'purple-light': '#A884F3'
+                    },
+                    fontFamily: {
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                        'lato': ['Lato', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-lato">
+    <!-- Hero Section -->
+    <section class="min-h-screen bg-gradient-to-br from-purple-medium to-purple-dark text-white relative overflow-hidden">
+        <div class="container mx-auto px-6 py-20 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left">
+                    <h1 class="font-montserrat font-bold text-4xl lg:text-6xl mb-6 leading-tight">
+                        Transforme suas Aulas com IA, Metodologias Ativas e Ágeis
+                    </h1>
+                    <p class="text-xl lg:text-2xl mb-8 opacity-90 leading-relaxed">
+                        Domine Inteligência Artificial e metodologias inovadoras para engajar seus alunos e revolucionar sua prática docente.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#opcao" class="bg-purple-light hover:bg-purple-medium text-purple-dark hover:text-white font-montserrat font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105">
+                            Quero a Mentoria
+                        </a>
+                        <a href="#opcao" class="bg-white hover:bg-purple-light text-purple-dark font-montserrat font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105">
+                            Quero o Curso Online
+                        </a>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <div class="w-80 h-80 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
+                        <img src="{{ url_for('static', filename='logo_edu.png') }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-r from-purple-dark/20 to-transparent"></div>
+    </section>
+
+    <!-- Quem Sou Eu -->
+    <section class="py-20 bg-purple-dark text-white">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="flex justify-center">
+                    <div class="w-80 h-80 bg-purple-light/20 rounded-full flex items-center justify-center">
+                        <div class="w-60 h-60 bg-purple-light/30 rounded-full flex items-center justify-center">
+                            <svg class="w-32 h-32 text-purple-light" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="font-montserrat font-bold text-4xl mb-6">Quem é Daniel Brandão?</h2>
+                    <p class="text-lg leading-relaxed">
+                        Sou professor, mentor e especialista em tecnologia educacional, com mais de 18 anos formando professores, desenvolvedores e profissionais de educação. Criei o IA.EDU para ajudar educadores a aplicarem IA, metodologias ativas e ágeis de forma prática, rápida e transformadora.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Antes e Depois -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="font-montserrat font-bold text-4xl text-center text-purple-dark mb-16">Antes e Depois</h2>
+            <div class="grid lg:grid-cols-2 gap-8">
+                <div class="bg-white border-2 border-red-200 rounded-lg p-8 text-center">
+                    <h3 class="font-montserrat font-bold text-2xl text-red-600 mb-6">Antes</h3>
+                    <ul class="space-y-4 text-gray-700">
+                        <li class="flex items-center">
+                            <span class="text-red-500 mr-3">❌</span>
+                            Aulas tradicionais e expositivas
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-red-500 mr-3">❌</span>
+                            Baixo engajamento dos alunos
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-red-500 mr-3">❌</span>
+                            Insegurança para usar novas tecnologias
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-purple-light/10 border-2 border-purple-light rounded-lg p-8 text-center">
+                    <h3 class="font-montserrat font-bold text-2xl text-purple-dark mb-6">Depois</h3>
+                    <ul class="space-y-4 text-gray-700">
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-3">✅</span>
+                            Aulas interativas e participativas
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-3">✅</span>
+                            Alunos motivados e envolvidos
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-3">✅</span>
+                            Confiança ao aplicar IA e metodologias inovadoras
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- O Método IA.EDU -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="font-montserrat font-bold text-4xl text-center text-purple-dark mb-16">Como Funciona o Programa IA.edu?</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-purple-light rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-montserrat font-bold text-xl text-purple-dark mb-4">Aprenda</h3>
+                    <p class="text-gray-1200">Conteúdos práticos sobre IA, metodologias ativas e métodos ágeis</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-purple-light rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M9 11H7v6h2v-6zm4 0h-2v6h2v-6zm4 0h-2v6h2v-6zm2.5-9H19v2h-1.5v17.5c0 .83-.67 1.5-1.5 1.5H8c-.83 0-1.5-.67-1.5-1.5V4H5V2h4.5V.5c0-.83.67-1.5 1.5-1.5h3c.83 0 1.5.67 1.5 1.5V2H19.5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-montserrat font-bold text-xl text-purple-dark mb-4">Aplique</h3>
+                    <p class="text-gray-600">Atividades reais e planos de aula para uso imediato, explicados em vídeo aulas mão na massa</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-purple-light rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-montserrat font-bold text-xl text-purple-dark mb-4">Transforme</h3>
+                    <p class="text-gray-600">Aumente o engajamento e a aprendizagem dos seus alunos com abordagens dinâmicas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- O que você recebe -->
+    <section class="py-20 bg-purple-light/10">
+        <div class="container mx-auto px-6">
+            <h2 class="font-montserrat font-bold text-4xl text-center text-purple-dark mb-16">O que você recebe</h2>
+            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <div class="flex items-center space-x-4">
+                    <span class="text-purple-light text-2xl">✅</span>
+                    <span class="text-lg">Sessões ao vivo (Mentoria)</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-purple-light text-2xl">✅</span>
+                    <span class="text-lg">Curso online completo (Vídeo aulas sempre atualizadas)</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-purple-light text-2xl">✅</span>
+                    <span class="text-lg">Templates de planos de aula ágeis</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-purple-light text-2xl">✅</span>
+                    <span class="text-lg">Exemplos práticos de uso de IA na educação</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-purple-light text-2xl">✅</span>
+                    <span class="text-lg">Certificado de conclusão</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-purple-light text-2xl">✅</span>
+                    <span class="text-lg">Grupo exclusivo de educadores inovadores</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Qual a melhor opção -->
+    <section class="py-20 bg-white" id="opcao">
+        <div class="container mx-auto px-6">
+            <h2 class="font-montserrat font-bold text-4xl text-center text-purple-dark mb-16">Qual a melhor opção para você?</h2>
+            <div class="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white border-2 border-purple-light rounded-lg p-8 text-center">
+                    <h3 class="font-montserrat font-bold text-2xl text-purple-dark mb-6">Mentoria IA.EDU</h3>
+                    <ul class="space-y-4 mb-8 text-left">
+                        <li class="flex items-center">
+                            <span class="text-purple-light mr-3">🎯</span>
+                            Plano de carreira individual
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-purple-light mr-3">📅</span>
+                            Sessões ao vivo recorrentes
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-purple-light mr-3">💬</span>
+                            Feedback personalizado
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-purple-light mr-3">👥</span>
+                            Grupo exclusivo de mentorados
+                        </li>
+                    </ul>
+                    <button class="w-full bg-purple-light hover:bg-purple-medium text-white font-montserrat font-semibold px-8 py-4 rounded-lg transition-all duration-300">
+                        Quero a Mentoria
+                    </button>
+                </div>
+                <div class="bg-white border-2 border-purple-light rounded-lg p-8 text-center">
+                    <h3 class="font-montserrat font-bold text-2xl text-purple-dark mb-6">Curso Online IA.EDU</h3>
+                    <ul class="space-y-4 mb-8 text-left">
+                        <li class="flex items-center">
+                            <span class="text-purple-light mr-3">⚡</span>
+                            Acesso imediato
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-purple-light mr-3">⏰</span>
+                            Aprenda no seu ritmo
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-purple-light mr-3">📚</span>
+                            Conteúdo estruturado e atualizado
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-purple-light mr-3">🤝</span>
+                            Grupo de alunos para troca
+                        </li>
+                    </ul>
+                    <button class="w-full bg-purple-light hover:bg-purple-medium text-white font-montserrat font-semibold px-8 py-4 rounded-lg transition-all duration-300">
+                        Quero o Curso Online
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="font-montserrat font-bold text-4xl text-center text-purple-dark mb-16">O que dizem nossos alunos</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white border border-purple-light rounded-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-light rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-bold">M</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-purple-dark">Maria Silva</h4>
+                            <p class="text-sm text-gray-600">Professora de Matemática</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"Transformei completamente minhas aulas! Meus alunos agora participam ativamente e o engajamento aumentou 300%."</p>
+                </div>
+                <div class="bg-white border border-purple-light rounded-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-light rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-bold">J</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-purple-dark">João Santos</h4>
+                            <p class="text-sm text-gray-600">Professor de História</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"A IA me ajudou a criar atividades incríveis. Agora uso tecnologia com confiança total em sala de aula."</p>
+                </div>
+                <div class="bg-white border border-purple-light rounded-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-light rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-bold">A</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-purple-dark">Ana Costa</h4>
+                            <p class="text-sm text-gray-600">Coordenadora Pedagógica</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"O método IA.EDU revolucionou nossa escola. Professores mais motivados e alunos mais engajados!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bônus Exclusivos -->
+    <section class="py-20 bg-purple-dark text-white">
+        <div class="container mx-auto px-6">
+            <h2 class="font-montserrat font-bold text-4xl text-center mb-16">Bônus Exclusivos</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-purple-light rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-montserrat font-bold text-xl mb-4">E-book "IA na Prática Educacional"</h3>
+                    <p class="opacity-90">Guia completo com exemplos práticos de uso da IA em sala de aula</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-purple-light rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19,3H5C3.9,3 3,3.9 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.9 20.1,3 19,3M19,19H5V5H19V19Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-montserrat font-bold text-xl mb-4">Templates de Planos de Aula Ágeis</h3>
+                    <p class="opacity-90">Modelos prontos para aplicar metodologias ágeis em suas aulas</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-purple-light rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-montserrat font-bold text-xl mb-4">Checklist de Ferramentas de IA</h3>
+                    <p class="opacity-90">Lista completa das melhores ferramentas de IA para professores</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recapitulação da Oferta -->
+    <section class="py-20 bg-gradient-to-br from-purple-medium to-purple-dark text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="font-montserrat font-bold text-4xl mb-8">Tudo que você vai receber ao se inscrever hoje</h2>
+            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
+                <div class="flex items-center space-x-4">
+                    <span class="text-purple-light text-2xl">🎯</span>
+                    <span class="text-lg">Programa completo IA.EDU</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-purple-light text-2xl">📚</span>
+                    <span class="text-lg">E-book "IA na Prática Educacional"</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-purple-light text-2xl">📋</span>
+                    <span class="text-lg">Templates de planos de aula ágeis</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-purple-light text-2xl">✅</span>
+                    <span class="text-lg">Checklist de ferramentas de IA</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-purple-light text-2xl">🏆</span>
+                    <span class="text-lg">Certificado de conclusão</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-purple-light text-2xl">👥</span>
+                    <span class="text-lg">Grupo exclusivo de educadores</span>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-purple-light hover:bg-white text-purple-dark font-montserrat font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105">
+                    Entrar na Mentoria
+                </button>
+                <button class="bg-white hover:bg-purple-light text-purple-dark hover:text-white font-montserrat font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105">
+                    Comprar o Curso Online
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="font-montserrat font-bold text-4xl text-center text-purple-dark mb-16">Perguntas Frequentes</h2>
+            <div class="max-w-4xl mx-auto space-y-6">
+                <div class="bg-white border border-purple-light rounded-lg p-6">
+                    <h3 class="font-montserrat font-semibold text-xl text-purple-dark mb-3">Para quem é o programa?</h3>
+                    <p class="text-gray-700">Para professores, coordenadores e profissionais de educação que querem inovar suas práticas pedagógicas com IA e metodologias ativas.</p>
+                </div>
+                <div class="bg-white border border-purple-light rounded-lg p-6">
+                    <h3 class="font-montserrat font-semibold text-xl text-purple-dark mb-3">Preciso saber IA antes?</h3>
+                    <p class="text-gray-700">Não! O programa foi desenvolvido para iniciantes. Você aprenderá desde o básico até aplicações avançadas de forma gradual e prática.</p>
+                </div>
+                <div class="bg-white border border-purple-light rounded-lg p-6">
+                    <h3 class="font-montserrat font-semibold text-xl text-purple-dark mb-3">Como são as sessões ao vivo?</h3>
+                    <p class="text-gray-700">As sessões de mentoria são semanais, com duração de 1h30, onde você pode tirar dúvidas, receber feedback e interagir com outros educadores.</p>
+                </div>
+                <div class="bg-white border border-purple-light rounded-lg p-6">
+                    <h3 class="font-montserrat font-semibold text-xl text-purple-dark mb-3">Qual a duração do curso online?</h3>
+                    <p class="text-gray-700">O curso tem 8 módulos com acesso vitalício. Você pode estudar no seu ritmo e revisitar o conteúdo sempre que precisar.</p>
+                </div>
+                <div class="bg-white border border-purple-light rounded-lg p-6">
+                    <h3 class="font-montserrat font-semibold text-xl text-purple-dark mb-3">Terei certificado válido?</h3>
+                    <p class="text-gray-700">Sim! Ao concluir o programa, você receberá um certificado de 40 horas que pode ser usado para progressão na carreira e pontuação em concursos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-purple-dark text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-8">
+                <h3 class="font-montserrat font-bold text-3xl text-purple-light mb-4">IA.EDU</h3>
+                <p class="text-lg opacity-90">Transformando a educação com inteligência artificial</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div>
+                    <h4 class="font-montserrat font-semibold text-lg mb-4">Contato</h4>
+                    <p class="opacity-80">contato@ia.edu</p>
+                    <p class="opacity-80">(11) 99999-9999</p>
+                </div>
+                <div>
+                    <h4 class="font-montserrat font-semibold text-lg mb-4">Links Importantes</h4>
+                    <div class="space-y-2">
+                        <p><a href="#" class="opacity-80 hover:text-purple-light transition-colors">Termos de Uso</a></p>
+                        <p><a href="#" class="opacity-80 hover:text-purple-light transition-colors">Política de Privacidade</a></p>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-montserrat font-semibold text-lg mb-4">Redes Sociais</h4>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="w-10 h-10 bg-purple-light rounded-full flex items-center justify-center hover:bg-white hover:text-purple-dark transition-colors">
+                            <span class="font-bold">f</span>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-purple-light rounded-full flex items-center justify-center hover:bg-white hover:text-purple-dark transition-colors">
+                            <span class="font-bold">@</span>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-purple-light rounded-full flex items-center justify-center hover:bg-white hover:text-purple-dark transition-colors">
+                            <span class="font-bold">in</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-purple-medium mt-8 pt-8 text-center opacity-80">
+                <p>&copy; 2024 IA.EDU - Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animação de entrada para elementos
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Aplicar animação a seções
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+
+        // Funcionalidade dos botões CTA
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', function() {
+                const buttonText = this.textContent.trim();
+                if (buttonText.includes('Mentoria')) {
+                    // Redirecionar para formulário de mentoria
+                    console.log('Redirecionando para formulário de mentoria');
+                    // window.location.href = 'https://forms.gle/mentoria-link';
+                } else if (buttonText.includes('Curso')) {
+                    // Redirecionar para checkout do curso
+                    console.log('Redirecionando para checkout do curso');
+                    // window.location.href = 'https://checkout.curso-link';
+                }
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9612b1dfe13627e5',t:'MTc1Mjg0OTIxMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
